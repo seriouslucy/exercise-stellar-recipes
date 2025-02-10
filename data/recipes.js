@@ -2,7 +2,6 @@ const recipes = [
   {
     id: "1",
     title: "Spaghetti Carbonara",
-    image: "https://picsum.photos/300/200",
     description: "A classic Italian pasta dish with eggs, cheese, pancetta, and pepper.",
     ingredients: [
       "Spaghetti",
@@ -22,7 +21,6 @@ const recipes = [
   {
     id: "2",
     title: "Avocado Toast",
-    image: "https://picsum.photos/300/200",
     description: "A quick and healthy breakfast option with avocado and toast.",
     ingredients: [
       "Bread",
@@ -40,7 +38,6 @@ const recipes = [
   {
     id: "3",
     title: "Chicken Alfredo",
-    image: "https://picsum.photos/300/200",
     description: "Creamy Alfredo sauce over tender chicken and fettuccine.",
     ingredients: [
       "Fettuccine",
@@ -61,7 +58,6 @@ const recipes = [
   {
     id: "4",
     title: "Caprese Salad",
-    image: "https://picsum.photos/300/200",
     description: "A fresh and simple Italian salad with mozzarella, tomatoes, and basil.",
     ingredients: [
       "Fresh Mozzarella",
@@ -82,7 +78,6 @@ const recipes = [
   {
     id: "5",
     title: "Chocolate Chip Cookies",
-    image: "https://picsum.photos/300/200",
     description: "Classic cookies with gooey chocolate chips.",
     ingredients: [
       "All-Purpose Flour",
@@ -106,7 +101,6 @@ const recipes = [
   {
     id: "6",
     title: "Vegetable Stir Fry",
-    image: "https://picsum.photos/300/200",
     description: "A quick and healthy vegetable stir fry with soy sauce and garlic.",
     ingredients: [
       "Broccoli",
@@ -129,7 +123,6 @@ const recipes = [
   {
     id: "7",
     title: "Margherita Pizza",
-    image: "https://picsum.photos/300/200",
     description: "Classic pizza with fresh mozzarella, basil, and tomato sauce.",
     ingredients: [
       "Pizza Dough",
@@ -149,7 +142,6 @@ const recipes = [
   {
     id: "8",
     title: "Beef Tacos",
-    image: "https://picsum.photos/300/200",
     description: "Flavorful beef tacos with fresh toppings.",
     ingredients: [
       "Ground Beef",
@@ -170,7 +162,6 @@ const recipes = [
   {
     id: "9",
     title: "Lemonade",
-    image: "https://picsum.photos/300/200",
     description: "Refreshing homemade lemonade.",
     ingredients: [
       "Lemons",
@@ -188,7 +179,6 @@ const recipes = [
   {
     id: "10",
     title: "Banana Pancakes",
-    image: "https://picsum.photos/300/200",
     description: "Fluffy pancakes with ripe bananas.",
     ingredients: [
       "All-Purpose Flour",
