@@ -30,3 +30,61 @@ input {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+
+.stellar-logo {
+  width: 40px;
+}
+
+.stellar-mobile-logo {
+  width: 30px;
+}
+
+.favorites-icon {
+  width: 40px;
+  
+}
+
+.profile-icon {
+  width: 40px;
+}
+
+.search-bar {
+  width: 30em;
+}
+
+.search-icon {
+  width: 35px;
+}
+
+.stellar-footer {
+  text-align: center;
+}
+.stellar-header {
+  background-color: white;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+
+.stellar-header-left-section {
+display: flex;
+
+} 
+
+.stellar-header-middle-section {
+display: flex;
+
+}
+
+.stellar-header-right-section {
+display: flex;
+
+}
+
+.stellar-header-right-section a {
+  padding: 5px;
+}

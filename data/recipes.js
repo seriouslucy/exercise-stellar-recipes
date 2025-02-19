@@ -1,7 +1,8 @@
-const recipes = [
+export const recipes = [
   {
     id: "1",
     title: "Spaghetti Carbonara",
+    image: "images/carbonara.jpg", 
     description: "A classic Italian pasta dish with eggs, cheese, pancetta, and pepper.",
     ingredients: [
       "Spaghetti",
@@ -21,6 +22,7 @@ const recipes = [
   {
     id: "2",
     title: "Avocado Toast",
+    image: "images/avocadotoast.jpg",
     description: "A quick and healthy breakfast option with avocado and toast.",
     ingredients: [
       "Bread",
@@ -38,6 +40,7 @@ const recipes = [
   {
     id: "3",
     title: "Chicken Alfredo",
+    image: "images/chickenalfredo.jpg",
     description: "Creamy Alfredo sauce over tender chicken and fettuccine.",
     ingredients: [
       "Fettuccine",
@@ -58,6 +61,7 @@ const recipes = [
   {
     id: "4",
     title: "Caprese Salad",
+    image: "images/capresesalad.jpg",
     description: "A fresh and simple Italian salad with mozzarella, tomatoes, and basil.",
     ingredients: [
       "Fresh Mozzarella",
@@ -78,6 +82,7 @@ const recipes = [
   {
     id: "5",
     title: "Chocolate Chip Cookies",
+    image: "images/cookies.jpg",
     description: "Classic cookies with gooey chocolate chips.",
     ingredients: [
       "All-Purpose Flour",
@@ -101,6 +106,7 @@ const recipes = [
   {
     id: "6",
     title: "Vegetable Stir Fry",
+    image: "images/stirfry.jpg",
     description: "A quick and healthy vegetable stir fry with soy sauce and garlic.",
     ingredients: [
       "Broccoli",
@@ -123,6 +129,7 @@ const recipes = [
   {
     id: "7",
     title: "Margherita Pizza",
+    image: "images/pizza.jpg",
     description: "Classic pizza with fresh mozzarella, basil, and tomato sauce.",
     ingredients: [
       "Pizza Dough",
@@ -142,6 +149,7 @@ const recipes = [
   {
     id: "8",
     title: "Beef Tacos",
+    image: "images/tacos.jpg",
     description: "Flavorful beef tacos with fresh toppings.",
     ingredients: [
       "Ground Beef",
@@ -162,6 +170,7 @@ const recipes = [
   {
     id: "9",
     title: "Lemonade",
+    image: "images/lemonade.jpg",
     description: "Refreshing homemade lemonade.",
     ingredients: [
       "Lemons",
@@ -179,6 +188,7 @@ const recipes = [
   {
     id: "10",
     title: "Banana Pancakes",
+    image: "images/bananapancakes.jpg",
     description: "Fluffy pancakes with ripe bananas.",
     ingredients: [
       "All-Purpose Flour",
@@ -198,3 +208,92 @@ const recipes = [
     ]
   }
 ];
+
+
+const favorites = [];
+
+export function renderRecipes(listRecipes) {
+  const recipesHTML = listRecipes
+  .map((recipe) => { 
+    
+    
+    const recipeStepsArray = recipe.steps.map((step) => {
+      return `
+      <li>${step}</li>
+      `
+    })
+    
+    
+    return `
+  <div class="recipe-container">
+      <div class="recipe-image-container">
+      <img class="recipe-image" src="${recipe.image}" alt="${recipe.title}" style="width:50%">
+      </div>
+      <div class="recipe-title">
+      ${recipe.title}
+      </div>
+      <div class="recipe-description">
+          ${recipe.description}
+          </div>
+      <div class="recipe-details"> 
+        <div class="recipe-ingredients">   
+          Ingredients: ${recipe.ingredients.join(', ')}
+          </div>
+          <div class="recipe-steps">
+          Preparation:
+          <ol>
+            ${recipeStepsArray.join('')}
+         </ol>
+          </div>
+          </div>
+          <button class="add-to-favorites-button button-primary js-add-to-favorites"
+          data-recipe-id="${recipe.id}">
+          Add to Favourites
+          </button>
+          </div>
+  `}).join("");
+
+  
+  const recipesGrid = document.querySelector('.js-recipes-grid');
+  recipesGrid.innerHTML = recipesHTML;
+}
+
+export function stepsHandler () {
+const recipeCard = document.querySelectorAll('.recipe-container')
+recipeCard.forEach((div) => {
+  div.addEventListener("click", () => {
+    
+    // div.removeAttribute('hidden');
+  })
+})}
+
+export function handleAddToFavorites(event) {
+   if(!event.target.classList.contains('js-add-to-favorites')) return;
+
+    const recipeId = event.target.dataset.recipeId;
+    const favoritesCount = document.getElementById('js-favorites-count');
+
+            const alreadyFavorite = favorites.some((fav) => fav.recipeId === recipeId);
+            if (!alreadyFavorite) {
+                favorites.push({ recipeId });
+          
+                console.log('Added to favourites!')
+            } else {
+                console.log('Recipe is already in favourites')
+            }
+};
+
+export function getFavorites() {
+  return favorites;
+};
+
+export function handleSearchRecipe() {
+  const searchInput = document.querySelector('.search-bar');
+  const searchValue = searchInput.value.trim().toLowerCase();
+
+  const filteredRecipes = recipes.filter((recipe) =>
+    recipe.title.toLowerCase().includes(searchValue)
+  );
+
+  renderRecipes(filteredRecipes);
+}
